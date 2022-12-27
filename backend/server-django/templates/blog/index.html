@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+{% block content %}
+
+<section class="home" id="home"></section>
+
+<!-- home section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <h1 class="heading"> <span>Biz</span> Haqimizda </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                {% for p in biz_haqda_image %}
+                  <div class="carousel-item active">
+                    <img src="{{ p.image.url }}" class="d-block w-100" height="600" alt="...">
+                  </div>
+                {% endfor %}
+                  {% comment %} <div class="carousel-item">
+                    <img src="./images/karausel-img2.jpg" class="d-block w-100" height="600" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/karausel-img3.jpg" class="d-block w-100" height="600" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/karausel-img4.jpg" class="d-block w-100" height="600" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/karausel-img5.jpg" class="d-block w-100" height="600" alt="...">
+                  </div> {% endcomment %}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+
+        <div class="content">
+            {% for t in biz_haqda %}
+                <h3>{{ t.title }}</h3>
+                <p>{{ t.description }}</p>
+            {% endfor %}
+            <h3>Faoliyat yuritadigan manzil</h3>
+            <p>Urganch shahar Tinchlik ko'chasi 90-uy "Kafolat Sug'urta binosining 2-kavati"</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="products" id="products">
+
+    <h1 class="heading"> ISH <span>Jarayoni</span> </h1>
+
+    <div class="box-container">
+
+        {% for im in ish_jarayoni %}
+            <div class="box">
+                <div id="box">
+
+                    <div class="image_im">
+                            <img width="450px" height="300px" class="karausel1" src="{{ im.image.url }}" alt="">
+                        </div>
+                    </div>
+
+            </div>
+        {% endfor %}
+        
+        
+
+    </div>
+
+</section>
+
+<section class="products" id="proekt">
+
+    <h1 class="heading">Proekt<span>larimiz</span> </h1>
+
+    <div class="box-container">
+        {% for proj in projects %}
+            <div class="box">
+                    <div id="box">
+                        <div class="image_im">
+                            <img width="450px" height="300px" class="karausel1" src="{{ proj.image.url }}" alt="">
+                        </div>
+                    </div>
+            </div>
+        {% endfor %}
+
+    </div>
+
+    </div>
+
+</section>
+
+<section class="products" id="products">
+
+    <h1 class="heading">Vi<span>deo</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+                <div id="box">
+                    <div class="video">
+                        <video width="100%" controls>
+                            <source src="./images/video1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+        </div>
+
+        <div class="box">
+                <div id="box">
+                    <div class="video">
+                        <video width="100%" controls>
+                            <source src="./images/video2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="contact" id="contact">
+
+    <h1 class="heading"> <span>Al</span>oqa</h1>
+        <div class="flexxx">
+                <div class="iframe">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d403.01238025656755!2d60.63204362996138!3d41.566825174005096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dfcf296728c32b%3A0x7eada61da234f70b!2sKafolat%20sug&#39;urta!5e0!3m2!1sru!2s!4v1671264148051!5m2!1sru!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="form">
+                    <form action="">
+                        <h3>Biz bilan bog'laning</h3>
+                        <div class="inputBox">
+                            <span class="fas fa-user"></span>
+                            <input type="text" placeholder="Ismingiz" required>
+                        </div>
+                        <div class="inputBox">
+                            <span class='bx bxs-chat'></span>
+                           <input type="text" placeholder="Bizga xabar yo'llash" required>
+                        </div>
+                        <div class="inputBox">
+                            <span class="fas fa-phone"></span>
+                            <input type="number" placeholder="Raqamingiz" name="username" maxlength="13" required>
+                        </div>
+                        <button class="x-btn">Yuborish <span class='bx bxs-paper-plane'></span></button>
+                            <br>
+                            <span class="btn-btn">Admin</span>
+                            <div class="inputBox" id="id">
+                                <span class="fas fa-user"> +998 (97) 261 88-88</span>
+                            </div>
+                    </form>
+                </div>
+        </div>
+</section>
+
+<!-- contact section ends -->
+
+<!-- blogs section starts  -->
+
+<!-- blogs section ends -->
+
+<!-- footer section starts  -->
+
+{% endblock %}
